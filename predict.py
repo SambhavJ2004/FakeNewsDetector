@@ -3,6 +3,22 @@ import torch.nn as nn
 from transformers import BertTokenizerFast, AutoModel
 import torch.nn.functional as F
 from newspaper import Article
+import os
+import requests
+
+def download_weights_if_missing():
+    weights_path = "c1_fakenews_weights.pt"
+    if not os.path.exists(weights_path):
+        print("Downloading model weights...")
+        url = "https://drive.google.com/uc?export=download&id=1Nuh44sBDXNEngrs3n-CaqlaXkIvrRzTY"
+        response = requests.get(url)
+        with open(weights_path, "wb") as f:
+            f.write(response.content)
+        print("Download complete.")
+download_weights_if_missing()
+model.load_state_dict(torch.load("c1_fakenews_weights.pt", map_location=torch.device("cpu")))
+
+
 
 
 
