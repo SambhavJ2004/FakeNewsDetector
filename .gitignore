@@ -1,0 +1,19 @@
+# Ignore virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# VSCode / PyCharm
+.vscode/
+.idea/
+
+# Model weights
+*.pt
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env

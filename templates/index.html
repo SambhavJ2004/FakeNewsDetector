@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake News Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 700px;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        textarea, input[type="url"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        textarea {
+            height: 140px;
+            resize: vertical;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #444;
+        }
+        .result span {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fake News Detector</h1>
+    <form action="/predict" method="post">
+        <label>Paste News Text:</label>
+        <textarea name="text" placeholder="Paste news content here..."></textarea>
+        <br>
+        <label>Or Enter News URL:</label>
+        <input type="url" name="url" placeholder="https://example.com/news-article" />
+        <br>
+        <button type="submit">Check News</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        Prediction:
+        <span style="color: {% if prediction == 'Fake' %}red{% else %}green{% endif %};">
+            {{ prediction }}
+        </span><br>
+        Confidence: <strong>{{ confidence }}%</strong>
+    </div>
+    {% endif %}
+</body>
+</html>
