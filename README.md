@@ -12,16 +12,23 @@ A BERT-based fake news classifier using PyTorch and HuggingFace Transformers. Th
 
 ---
 
-## 📁 Project Structure
+## 🗂️ Project Structure
 
-akeNewsDetector/
-├── main.py # Flask web app
-├── predict.py # Model definition + inference logic
+```
+
+FakeNewsDetector/
+├── main.py                # Flask web app
+├── predict.py             # Model definition + inference logic
 ├── templates/
-│ └── index.html # Web interface template
+│   └── index.html         # Web interface template
 ├── .gitignore
 ├── README.md
-└── requirements.txt # Dependencies
+└── requirements.txt       # Dependencies
+
+````
+
+
+
 ---
 
 ## 🧠 Model Weights
@@ -107,5 +114,3 @@ Then open your browser and go to:
 * Libraries: PyTorch, Flask, Transformers, Newspaper3k
 
 ---
-
-
