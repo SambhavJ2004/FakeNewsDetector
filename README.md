@@ -36,3 +36,69 @@ Place the file in your project root if you're not using auto-download.
 ```bash
 git clone https://github.com/your-username/fake-news-detector.git
 cd fake-news-detector
+````
+
+### 2️⃣ Create Virtual Environment (Optional but Recommended)
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+
+### 3️⃣ Install Dependencies
+
+Make sure the following packages are listed in `requirements.txt`:
+
+```
+torch
+transformers
+flask
+newspaper3k
+requests
+```
+
+Then install them:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run the App
+
+```bash
+python main.py
+```
+
+Then open your browser and go to:
+[http://localhost:5000](http://localhost:5000)
+
+---
+
+## ✏️ How It Works
+
+* You can input:
+
+  * A **raw news article**
+  * Or a **URL** (the app will extract the article automatically)
+* The model outputs:
+
+  * A label: `Real` or `Fake`
+  * A confidence score (0 to 1)
+
+---
+
+## 📌 Notes
+
+* First-time use may take a few seconds to download the model weights (\~100MB).
+* The model runs on **CPU** by default for maximum compatibility.
+
+---
+
+## 🙌 Credits
+
+* Model: `bert-base-uncased` from HuggingFace
+* Libraries: PyTorch, Flask, Transformers, Newspaper3k
+
+---
+
+
