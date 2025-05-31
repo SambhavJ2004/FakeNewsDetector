@@ -49,7 +49,7 @@ Place the file in your project root if you're not using auto-download.
 
 ```bash
 git clone https://github.com/SambhavJ2004/FakeNewsDetector.git
-cd fake-news-detector
+cd FakeNewsDetector
 ````
 
 ### 2️⃣ Create Virtual Environment (Optional but Recommended)
