@@ -48,7 +48,7 @@ Place the file in your project root if you're not using auto-download.
 1. **Clone the repo**
 
 ```bash
-git clone https://github.com/your-username/fake-news-detector.git
+git clone https://github.com/SambhavJ2004/FakeNewsDetector.git
 cd fake-news-detector
 ````
 
